@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35222.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recognition.WebApp", "Recognition.WebApp\Recognition.WebApp.csproj", "{5C719AD2-CDE8-4431-BCC9-F72487C24DA8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5C719AD2-CDE8-4431-BCC9-F72487C24DA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C719AD2-CDE8-4431-BCC9-F72487C24DA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C719AD2-CDE8-4431-BCC9-F72487C24DA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C719AD2-CDE8-4431-BCC9-F72487C24DA8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {426B767B-9143-4826-B05A-1F31B2444335}
+	EndGlobalSection
+EndGlobal

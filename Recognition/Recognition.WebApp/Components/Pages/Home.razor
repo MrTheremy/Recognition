@@ -1,0 +1,35 @@
+﻿@page "/"
+@using Microsoft.ML
+
+<PageTitle>Upload an Image</PageTitle>
+
+<input type="file" id="fileInput" accept="image/*" @onchange="onFileChanged" />
+<button @onclick="OnRecognizeClick">Recognize</button>
+<label id="resultLabel"></label>
+
+@code {
+    private string recognizedResult = "";
+
+    private async Task OnFileChanged(InputFileChangeEventArgs e)
+    {
+        var file = e.File;
+        var stream = file.OpenReadStream(maxAllowedSize: 1024 * 1024);
+        recognizedResult = await RecognizeImage(stream);
+    }
+
+    private async Task<string> RecognizeImage(Stream stream)
+    {
+        var mlContext = new MLContext();
+        var model = mlContext.Model.Load("path_to_your_model.zip", out var modelInputSchema);
+        var predictionEngine = mlContext.Model.CreatePredictionEngine<InputData, OutputData>(model);
+
+        var inputData = new InputData { Image = stream };
+        var predictionResult = predictionEngine.Predict(inputData);
+        return predictionResult.Prediction;
+    }
+
+    private void OnRecognizeClick()
+    {
+        document.getElementById("resultLabel").innerText = recognizedResult;
+    }
+}
